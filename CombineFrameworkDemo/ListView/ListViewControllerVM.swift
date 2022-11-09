@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol ViewContollerVMProtocol{
-    
+protocol ListViewContollerVMProtocol{
+    func fetchDataForList()
 }
 
-class ViewControllerVM:ViewContollerVMProtocol{
+class ListViewControllerVM:ListViewContollerVMProtocol{
     var observer : AnyCancellable?
     
     var action = PassthroughSubject<[String],Error>()

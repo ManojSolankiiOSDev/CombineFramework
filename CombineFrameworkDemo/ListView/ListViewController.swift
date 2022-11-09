@@ -39,9 +39,9 @@ class MyTableViewCell : UITableViewCell{
     }
 }
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
 
-    var viewModel = ViewControllerVM()
+    var viewModel = ListViewControllerVM()
     var observers : [AnyCancellable] = []
     var model : [String] = []
     private var tableView : UITableView = {
