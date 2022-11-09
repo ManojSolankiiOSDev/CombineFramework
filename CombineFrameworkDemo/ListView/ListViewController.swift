@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+
 class MyTableViewCell : UITableViewCell{
     
     var action = PassthroughSubject<String,Error>()
@@ -75,7 +76,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
         cell.textLabel?.text = self.model[indexPath.row]
-        cell.action.sink { complition in } receiveValue: { result in
+        cell.action.sink { complition in
+            
+        } receiveValue: { result in
             print("Button data:\(result)")
         }.store(in: &observers)
 
